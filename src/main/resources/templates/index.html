@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Finanças Casa</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Finanças Casa</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link" href="#1">Balanço</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#2">O que
+							entra R$</a></li>
+					<li class="nav-item"><a class="nav-link" href="#3">O que
+							Sai R$</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container-fluid">
+		<div class="tab-content">
+			<div class="col-lg-12 col-lg-offset-2">
+
+				<h1 class="my-4">Shop Name</h1>
+				<div class="list-group">
+					<a href="#1" data-toggle="tab">Balanço</a> <a href="#2"
+						data-toggle="tab">O que entra R$</a> <a href="#3"
+						data-toggle="tab">O que Sai R$</a>
+				</div>
+			</div>
+			<hr>
+			<div class="tab-pane active" id="1">
+				<div class="row">
+
+					<!-- /.col-lg-3 -->
+
+					<div class="col-lg-8 col-lg-offset-2">
+
+						<table id="tableRelatorio" class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">Mês de Referência</th>
+									<th scope="col">O que entra R$</th>
+									<th scope="col">O que sai R$</th>
+									<th scope="col">Balanço Final</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+					<!-- /.col-lg-9 -->
+				</div>
+			</div>
+
+			<div class="tab-pane" id="2">
+				<h3>O que tem para receber</h3>
+				<div class="row">
+					<div class="col-lg-5">
+						<form id="formEntrada">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="desc">Descrição:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="desc" 
+										placeholder="Descrição" name="desc">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="valor">Valor:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="valor" 
+										placeholder="valor" name="valor">
+								</div>
+							</div>
+							 <div class="form-group">
+			                	<label class="control-label col-sm-2" for="exampleFormControlSelect1">Data</label>
+			                	<div class="col-sm-10">
+			                   		<select class="form-control" id="dataEntrada">
+			                   	 		<option>Selecione</option>
+			                   	 	</select>
+			                	</div>
+			                
+		                    </div>	
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button id="btn_enviar" type="submit" class="btn btn-default">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-lg-5">
+
+						<table class="table table-striped" id="tableEntrada">
+							<thead>
+								<tr>
+									<th scope="col">Data</th>
+									<th scope="col">Descrição</th>
+									<th scope="col">Valor</th>
+									<th scope="col">Alterar</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-pane" id="3">
+				<div class="col-lg-offset-1	 col-lg-5">
+					<h3>O que tem para pagar</h3>
+				</div>
+				<div class="row">
+					<div class="col-lg-5">
+						<form id="formSaida">
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="descSaida">Descrição:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="descSaida"
+										placeholder="Descrição" value="Luz" name="descSaida">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="valorSaida">Valor:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" value="200" id="valorSaida"
+										placeholder="valorSaida" name="valorSaida">
+								</div>
+							</div>
+						    <div class="form-group">
+			                	<label class="control-label col-sm-2" for="exampleFormControlSelect1">Data</label>
+			                	<div class="col-sm-10">
+			                   		<select class="form-control" id="data">
+			                   	 		<option>Selecione</option>
+			                   	 	</select>
+			                    </div>
+			                
+			                    </div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" id="btn_enviar_saida" class="btn btn-default">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-lg-5">
+
+						<table class="table table-striped" id="tableSaida">
+							<thead>
+								<tr>
+									<th scope="col">Data</th>
+									<th scope="col">Descrição</th>
+									<th scope="col">Valor</th>
+									<th scope="col">Alterar</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+ 				<div class= "modal fade" id="editarSaida">
+	                <div class="modal-dialog modal-lg" tabindex="-10" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+	                  <div class="modal-content">
+	                    <div class="modal-header">
+	                    	<div>
+	                      		<h2 class="modal-title"> Alterar dados da Saida </h2>		
+	                      	</div>
+	                    	<div>
+	                    		<button type="button" class="close" data-dismiss="modal">X</button>		
+	                    	</div>                  		                      
+	                    </div>
+	                    <div class="modal-body table-responsive">
+
+	                      <!-- <div class="row">
+	                        <div class="container-fluid col-md-12"> -->
+	                          <table class="table table-striped" id="tableSaidaEditar">
+	                            <thead>
+	                              <tr class="table-header">
+	                                <th scope="col">Data</th>
+									<th scope="col">Descrição</th>
+									<th scope="col">Valor</th>
+	                              </tr>
+	                            </thead>
+	                            <tbody>
+
+	                            </tbody>
+	                          </table>
+	                        <!-- </div>
+	                      </div> -->
+
+	                      <form>
+	                          <div class="container-fluid col-md-12">
+	                            <div class="col-md-5">
+	                            	<div class="form-group">
+										<label class="control-label col-sm-2" for="descSaida">Descrição:</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="descSaidaEdit"
+												placeholder="Descrição" name="descSaida">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2" for="valorSaida">Valor:</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control"  id="valorSaidaEdit"
+												placeholder="valorSaida" name="valorSaida">
+										</div>
+									</div>
+								    <div class="form-group">
+					                	<label class="control-label col-sm-2" for="exampleFormControlSelect1">Data</label>
+					                	<div class="col-sm-10">
+					                   		<select class="form-control" id="dataSaidaEdit">
+					                   	 		<option>Selecione</option>
+					                   	 	</select>
+					                    </div>
+					                
+				                    </div>
+	                            </div>
+	                          </div>
+		                        <div class="modal-footer">
+		                        	<div class="form-group">
+		                          		<button type="button" class="btn btn-danger pull-left" id="btn_desativar">
+		                            	<span aria-hidden="true"> Desativar </span>
+		                          		</button>
+		                          	</div>	
+		                          <div class="form-group">
+		                            <button type="submit" class="btn btn-success" id="btn_Alterar">Alterar</button>
+		                          </div>
+		                        </div>
+	                      </form>
+	                    </div>
+	                  </div>
+	                </div>
+	            </div>    
+
+			</div>
+
+		</div>
+
+		
+
+	</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="js/jquery/jquery.min.js"></script>
+	<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="js/controle.js"></script>
+</body>
+
+</html>
