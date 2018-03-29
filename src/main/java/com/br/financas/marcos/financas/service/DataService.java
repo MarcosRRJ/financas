@@ -6,7 +6,7 @@ import com.br.financas.marcos.financas.model.Data;
 
 public interface DataService {
 
-	public Data savaData(Data data);
+	public int savaData(Data data);
 
 	public List<?> listaTudoPorData();
 

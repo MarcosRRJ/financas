@@ -15,10 +15,27 @@ public class DataServiceImpl implements DataService {
 	@Autowired
 	private DataRepository dataRepository;
 
+	int fazInsert = 0 ;
+
 	@Override
-	public Data savaData(Data data) {
-		Data obj = dataRepository.save(data);
-		return obj;
+	public int savaData(Data data) {
+		fazInsert = 0 ;
+		
+		dataRepository.findAll().forEach(dataEquals ->{
+			if(dataEquals.getDescricao().equals(data.getDescricao())){
+				fazInsert = 1;
+			System.out.println("igual");
+		}
+			else
+				System.out.println("Diferente");
+		});
+				
+		if (fazInsert == 0) 
+			
+			dataRepository.save(data);
+		
+		
+		return fazInsert;
 	}
 
 	@Override

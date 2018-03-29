@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,16 +26,18 @@ public class DataController {
 
 	@RequestMapping(value = "/inserirData", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
-	public ResponseEntity<Data> inserirData(Data data) {
+	public ResponseEntity<Integer> inserirData(Data data) {
 		logger.debug("# Entrei Controlle de Finanças - Metodo: inserirData");
 
+		int status = 0;
 		try {
-			dataService.savaData(data);
+			status = dataService.savaData(data);
+				
 		} catch (Exception e) {
-
+			System.out.println(e.getMessage());
 		}
 		logger.debug("# Fim do Metodo: inserirData #");
-		return ResponseEntity.ok().body(data);
+		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/listaTodasDatas", method = RequestMethod.POST, produces = "application/json")

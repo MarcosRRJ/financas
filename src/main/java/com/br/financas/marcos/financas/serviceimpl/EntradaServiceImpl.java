@@ -1,6 +1,7 @@
 package com.br.financas.marcos.financas.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,12 @@ public class EntradaServiceImpl implements EntradaService {
 	public double somaPorData(Data data) {
 		
 		return entradaRepository.somaPorData(data);
+	}
+
+	@Override
+	public Optional<Entrada> pegaUmaEntrada(Integer id) {
+		Optional<Entrada> entrada = entradaRepository.findById(id); 
+		return entrada;
 	}
 
 }

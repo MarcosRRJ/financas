@@ -2,6 +2,7 @@ package com.br.financas.marcos.financas.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.br.financas.marcos.financas.model.Entrada;
+import com.br.financas.marcos.financas.model.Saida;
 import com.br.financas.marcos.financas.service.RelatorioService;
 import com.br.financas.marcos.financas.service.EntradaService;
 
@@ -74,6 +76,21 @@ public class EntradaController {
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+		}
+		logger.debug("# Fim do Metodo: inserirEntrada #");
+		return ResponseEntity.ok().body(entrada);
+	}
+	
+	@RequestMapping(value = "/pegaUmaEntrada", method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public ResponseEntity<Optional<Entrada>> pegaUmaEntrada(Integer id) {
+		logger.debug("# Entrei Controlle de Finanças - Metodo: inserirEntrada");
+		Optional<Entrada> entrada = null;
+		try {
+
+			entrada = entradaService.pegaUmaEntrada(id);
+		} catch (Exception e) {
+
 		}
 		logger.debug("# Fim do Metodo: inserirEntrada #");
 		return ResponseEntity.ok().body(entrada);

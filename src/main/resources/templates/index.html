@@ -34,13 +34,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="#1">Balanço</a>
+					<li class="nav-item active"><a class="nav-link" data-toggle="tab" href="#1">Balanço</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#2">O que
+					<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#2">O que
 							entra R$</a></li>
-					<li class="nav-item"><a class="nav-link" href="#3">O que
+					<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#3">O que
 							Sai R$</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Contact</a>
+					<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#inserirData" href="#">Inserir Data</a>
 					</li>
 				</ul>
 			</div>
@@ -49,10 +49,11 @@
 
 	<!-- Page Content -->
 	<div class="container-fluid">
+
 		<div class="tab-content">
 			<div class="col-lg-12 col-lg-offset-2">
 
-				<h1 class="my-4">Shop Name</h1>
+				<h1 class="my-4">Controle de Contas</h1>
 				<div class="list-group">
 					<a href="#1" data-toggle="tab">Balanço</a> <a href="#2"
 						data-toggle="tab">O que entra R$</a> <a href="#3"
@@ -107,7 +108,7 @@
 							 <div class="form-group">
 			                	<label class="control-label col-sm-2" for="exampleFormControlSelect1">Data</label>
 			                	<div class="col-sm-10">
-			                   		<select class="form-control" id="dataEntrada">
+			                   		<select class="form-control" id="selectListDataEntrada">
 			                   	 		<option>Selecione</option>
 			                   	 	</select>
 			                	</div>
@@ -137,6 +138,81 @@
 						</table>
 					</div>
 				</div>
+
+ 				<div class= "modal fade" id="editarEntrada">
+	                <div class="modal-dialog modal-lg" tabindex="-10" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+	                  <div class="modal-content">
+	                    <div class="modal-header">
+	                    	<div>
+	                      		<h2 class="modal-title"> Alterar dados de Entrada </h2>		
+	                      	</div>
+	                    	<div>
+	                    		<button type="button" class="close" data-dismiss="modal">X</button>		
+	                    	</div>                  		                      
+	                    </div>
+	                    <div class="modal-body table-responsive">
+
+	                      <!-- <div class="row">
+	                        <div class="container-fluid col-md-12"> -->
+	                          <table class="table table-striped" id="tableEntradaEditar">
+	                            <thead>
+	                              <tr class="table-header">
+	                                <th scope="col">Data</th>
+									<th scope="col">Descrição</th>
+									<th scope="col">Valor</th>
+	                              </tr>
+	                            </thead>
+	                            <tbody>
+
+	                            </tbody>
+	                          </table>
+	                        <!-- </div>
+	                      </div> -->
+
+	                      <form>
+	                          <div class="container-fluid col-md-12">
+	                            <div class="col-md-5">
+	                            	<div class="form-group">
+										<label class="control-label col-sm-2" for="descEntrada">Descrição:</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="descEntradaEdit"
+												placeholder="Descrição" name="descSaida">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2" for="valorEntrada">Valor:</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control"  id="valorEntradaEdit"
+												placeholder="valorEntrada" name="valorEntrada">
+										</div>
+									</div>
+								    <div class="form-group">
+					                	<label class="control-label col-sm-2" for="exampleFormControlSelect1">Data</label>
+					                	<div class="col-sm-10">
+					                   		<select class="form-control" id="dataEntradaEdit">
+					                   	 		<option>Selecione</option>
+					                   	 	</select>
+					                    </div>
+					                
+				                    </div>
+	                            </div>
+	                          </div>
+		                        <div class="modal-footer">
+		                        	<div class="form-group">
+		                          		<button type="button" class="btn btn-danger pull-left" id="btn_desativar">
+		                            	<span aria-hidden="true"> Desativar </span>
+		                          		</button>
+		                          	</div>	
+		                          <div class="form-group">
+		                            <button type="submit" class="btn btn-success" id="btn_AlterarEntrada">Alterar</button>
+		                          </div>
+		                        </div>
+	                      </form>
+	                    </div>
+	                  </div>
+	                </div>
+	            </div>  
+
 			</div>
 
 			<div class="tab-pane" id="3">
@@ -145,7 +221,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-5">
-						<form id="formSaida">
+						<form id="forSaida">
 							<div class="form-group">
 								<label class="control-label col-sm-2" for="descSaida">Descrição:</label>
 								<div class="col-sm-10">
@@ -163,7 +239,7 @@
 						    <div class="form-group">
 			                	<label class="control-label col-sm-2" for="exampleFormControlSelect1">Data</label>
 			                	<div class="col-sm-10">
-			                   		<select class="form-control" id="data">
+			                   		<select class="form-control" id="selectListDataSaida">
 			                   	 		<option>Selecione</option>
 			                   	 	</select>
 			                    </div>
@@ -267,12 +343,55 @@
 	                  </div>
 	                </div>
 	            </div>    
-
 			</div>
 
 		</div>
 
 		
+    			<div class= "modal fade" id="inserirData">
+	                <div class="modal-dialog modal-lg" tabindex="-10" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+	                  <div class="modal-content">
+	                    <div class="modal-header">
+	                    	<div>
+	                      		<h2 class="modal-title"> Inserir nova Data </h2>		
+	                      	</div>
+	                    	<div>
+	                    		<button type="button" class="close" data-dismiss="modal">X</button>		
+	                    	</div>                  		                      
+	                    </div>
+	                    <div class="modal-body table-responsive">
+
+	                 
+
+	                      <form>
+	                          <div class="container-fluid col-md-12">
+	                            <div class="col-md-5">
+	                            	<div class="form-group">
+										<label class="control-label col-sm-2" for="formData">Data:</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="formData"
+												placeholder="Data" name="formData">
+										</div>
+									</div>
+								
+								   
+	                            </div>
+	                          </div>
+		                        <div class="modal-footer">
+		                        	<div class="form-group">		                        	 
+		                          		<button type="button" class="btn btn-danger pull-left" data-dismiss="modal">
+		                            	<span aria-hidden="true"> Cancelar </span>
+		                          		</button>
+		                          	</div>	
+		                          <div class="form-group">
+		                            <button type="submit" class="btn btn-success" id="btn_enviarData">Enviar</button>
+		                          </div>
+		                        </div>
+	                      </form>
+	                    </div>
+	                  </div>
+	                </div>
+	            </div>  
 
 	</div>
 
@@ -282,6 +401,8 @@
 	<script src="js/jquery/jquery.min.js"></script>
 	<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="js/controle.js"></script>
+	<script src="js/saida.js"></script>
+	<script src="js/entrada.js"></script>
 </body>
 
 </html>
